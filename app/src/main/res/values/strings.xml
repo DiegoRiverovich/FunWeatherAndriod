@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FunWeather</string>
+
+    <string name="gps_network_not_enabled">Включить локацию</string>
+    <string name="open_location_settings">Включить</string>
+    <string name="Cancel">Нет</string>
+
+    <string name="rayon">Район: %1$s </string >
+    <string name="humidity">Влажность: %1$s </string >
+    <string name="pressure">Давление: %1$s </string >
+    <string name="min_temp">Минимальная температура: %1$s </string >
+    <string name="max_temp">Максимальная температура: %1$s </string >
+    <string name="windSpeed">Скорость ветра: %1$s </string >
+    <string name="pasmurno"> %1$s </string >
+    <string name="temperature1" > %1$s <![CDATA[ <font font-family="sans-serif-light">\u2103 </font> ]]> </string >
+    <string name="temperature">
+    <font font-family="sans-serif-thin"> %1$s \u2103</font>
+    </string>
+</resources>

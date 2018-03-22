@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.niceattiregames.andrey.funweather.MainActivity">
+
+    <com.jgabrielfreitas.core.BlurImageView
+        android:id="@+id/blurImage"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/braziliya"
+        android:tint="#AF000000"
+        />
+
+    <!-- Target button -->
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/targetlocationicon3"
+        android:background="@null"
+        android:onClick="getLocationButtonClick"
+
+        android:layout_margin="5dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+
+        />
+
+    <!-- Rayon Kapotnia -->
+
+    <TextView
+        android:id="@+id/rayon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:textColor="#f4f4f4"
+        android:text="Район:"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+
+        />
+
+    <!-- Coordinates -->
+
+    <TextView
+        android:id="@+id/coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/rayon"
+        android:textSize="13dp"
+        android:textColor="#f4f4f4"
+        android:text="Координаты:"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
+
+        />
+
+    <!-- Humidity -->
+
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/coordinates"
+        android:textSize="15dp"
+        android:textColor="#f4f4f4"
+        android:text="Влажность:"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+
+        />
+
+    <!-- Pressure -->
+
+    <TextView
+        android:id="@+id/pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/humidity"
+        android:textSize="15dp"
+        android:textColor="#f4f4f4"
+        android:text="Давление:"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
+
+        />
+
+    <!-- Min temp -->
+
+    <TextView
+        android:id="@+id/minTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pressure"
+        android:textSize="15dp"
+        android:textColor="#f4f4f4"
+        android:text="Минимальная температура:"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
+
+        />
+
+    <!-- Max temp -->
+
+    <TextView
+        android:id="@+id/maxTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/minTemp"
+        android:textSize="15dp"
+        android:textColor="#f4f4f4"
+        android:text="Максимальная температура:"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
+
+        />
+
+    <!-- Wind speed -->
+
+    <TextView
+        android:id="@+id/windSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/maxTemp"
+        android:textSize="15dp"
+        android:textColor="#f4f4f4"
+        android:text="Скорость ветра:"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <!-- Wind speed -->
+
+    <TextView
+        android:id="@+id/pasmurno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/windSpeed"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#f4f4f4"
+        android:text="п"
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+
+        />
+
+    <!-- Temperature -->
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/pasmurno"
+        android:fontFamily="sans-serif-light"
+        android:textSize="100dp"
+        android:textStyle="normal"
+        android:textColor="#f4f4f4"
+        android:text=" C"
+
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="0dp"
+
+        />
+
+    <!-- Joke -->
+
+    <ScrollView
+        android:paddingRight="10dp"
+        android:id="@+id/jokeScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:minHeight="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/temperature"
+        android:layout_above="@+id/updateJokeButton"
+        android:fillViewport="true"
+        >
+
+        <TextView
+            android:paddingBottom="10dp"
+            android:paddingRight="15dp"
+            android:id="@+id/joke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/temperature"
+            android:layout_above="@+id/updateJokeButton"
+            android:textSize="15dp"
+            android:textColor="#f4f4f4"
+            android:text="- От чего твоя собака уменрла ? - Да от голода. -Как это ? - Да съел я ее..."
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+
+
+            />
+
+    </ScrollView>
+
+    <TextView
+        android:paddingBottom="10dp"
+        android:paddingRight="15dp"
+        android:id="@+id/jokeSite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/jokeScrollView"
+        android:textSize="10dp"
+        android:textColor="#f4f4f4"
+        android:text="http://rzhunemogu.ru"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+
+
+        />
+
+
+    <!-- Update joke button -->
+    <ImageButton
+        android:id="@+id/updateJokeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/updatearrows1"
+        android:background="@null"
+        android:onClick="getNewJokeButtonClick"
+
+        android:layout_margin="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+
+        />
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+
+        <ProgressBar
+            android:layout_centerHorizontal="true"
+            android:id="@+id/progBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/progBarTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progBar"
+            android:textSize="20dp"
+            android:textColor="#f4f4f4"
+            android:text="Определяется позиция"
+
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>
