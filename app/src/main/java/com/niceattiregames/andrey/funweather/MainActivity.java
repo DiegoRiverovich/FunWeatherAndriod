@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements DataGPSCallback, 
         jsonService = new JSONService(this);
         jsonService.jsonRequest("http://rzhunemogu.ru/RandJSON.aspx?CType=1", "joke", true);
 /*        if (timeIsComeToUpdateLocation()) {
-            jsonService.jsonRequest("http://api.openweathermap.org/data/2.5/weather?lat=55.703161&lon=37.769485&lang=ru&units=metric&cnt=10&appid=74594e92ea7f917b823f7ad9a222f74a");
+            jsonService.jsonRequest("http://api.openweathermap.org/data/2.5/weather?lat=55.703161&lon=37.769485&lang=ru&units=metric&cnt=10&appid=appid");
         }*/
 
        isScreenBigerThen1080();
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements DataGPSCallback, 
     public void onDataReceive(double lon, double lat) {
         coordinatesTextView.setText("Координаты: " + lat + ", " + lon + "  ");
         if (timeIsComeToUpdateLocation()) {
-            jsonService.jsonRequest("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&lang=ru&units=metric&cnt=10&appid=74594e92ea7f917b823f7ad9a222f74a", "weather", false);
+            jsonService.jsonRequest("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&lang=ru&units=metric&cnt=10&appid=appid", "weather", false);
             saveTime();
         } else {
             /*SharedPreferences sharedPreferences = getSharedPreferences("WeatherData", Context.MODE_PRIVATE);
